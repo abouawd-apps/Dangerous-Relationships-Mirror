@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليلك الشامل لمعرفة العلاقات الخطرة | Dangerous Relationships Guide</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cairo for Arabic, Plus Jakarta Sans for English -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            300: '#5eead4',
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                            800: '#115e59',
+                            900: '#134e4a',
+                        },
+                        accent: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            200: '#ddd6fe',
+                            300: '#c4b5fd',
+                            400: '#a78bfa',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            800: '#5b21b6',
+                            900: '#4c1d95',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --font-ar: 'Cairo', sans-serif;
+            --font-en: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        html[dir="rtl"] body {
+            font-family: var(--font-ar);
+        }
+
+        html[dir="ltr"] body {
+            font-family: var(--font-en);
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* 3D Flip Card Styles */
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+
+        .transform-style-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+        }
+
+        .backface-hidden {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+
+        .flipped .transform-style-3d {
+            transform: rotateY(180deg);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.1);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(139, 92, 246, 0.5);
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(139, 92, 246, 0.8);
+        }
+
+        /* Subtle Pulse Animation for Somatic Map */
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); opacity: 0.75; }
+            50% { transform: scale(1.18); opacity: 1; }
+        }
+        .pulse-glow {
+            animation: pulseGlow 2.4s infinite ease-in-out;
+        }
+
+        /* Glassmorphism Card Effect */
+        .glass-card {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 selection:bg-accent-500 selection:text-white min-h-screen flex flex-col overflow-x-hidden">
+
+    <!-- Ambient Decorative Background Blobs -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+        <div class="absolute -top-32 -right-32 w-96 h-96 bg-accent-500/15 dark:bg-accent-600/15 rounded-full blur-3xl"></div>
+        <div class="absolute top-1/3 -left-32 w-96 h-96 bg-primary-500/15 dark:bg-primary-600/10 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-32 right-1/4 w-96 h-96 bg-rose-500/10 dark:bg-rose-600/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <!-- Top Sticky Navigation Bar -->
+    <header class="sticky top-0 z-50 glass-card bg-white/85 dark:bg-slate-900/85 border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3 flex items-center justify-between gap-3">
+            <!-- Brand Logo & Title -->
+            <a href="#hero" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-accent-600 to-primary-500 flex items-center justify-center text-white shadow-lg shadow-accent-500/25 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid fa-heart-pulse text-xl"></i>
+                </div>
+                <div>
+                    <h1 id="nav-brand-title" class="font-extrabold text-lg sm:text-xl tracking-tight bg-gradient-to-r from-accent-600 to-primary-600 dark:from-accent-400 dark:to-primary-400 bg-clip-text text-transparent">
+                        بوصلة العلاقات الواعية
+                    </h1>
+                    <p id="nav-brand-sub" class="text-xs text-slate-500 dark:text-slate-400">
+                        دليلك الشامل لمعرفة العلاقات الخطرة - د. محمد طه
+                    </p>
+                </div>
+            </a>
+
+            <!-- Desktop Quick Links -->
+            <nav class="hidden lg:flex items-center gap-1 text-sm font-semibold">
+                <a href="#personas" id="nav-link-1" class="px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition">الأشخاص الثلاثة</a>
+                <a href="#body-signals" id="nav-link-2" class="px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition">إشارات الجسد</a>
+                <a href="#masks" id="nav-link-3" class="px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition">الأقنعة النفسية</a>
+                <a href="#patterns" id="nav-link-4" class="px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition">الأنماط الخطرة</a>
+                <a href="#recovery" id="nav-link-5" class="px-3 py-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-300 transition">خطة التعافي</a>
+            </nav>
+
+            <!-- Action Controls: Language & Dark/Light Mode -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <!-- Language Switcher Button -->
+                <button onclick="toggleLanguage()" id="lang-toggle-btn" class="flex items-center gap-2 px-3.5 py-2 rounded-xl font-bold text-xs sm:text-sm bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700 transition shadow-sm" aria-label="Toggle Language">
+                    <i class="fa-solid fa-earth-americas text-accent-500"></i>
+                    <span id="lang-btn-text">English</span>
+                </button>
+
+                <!-- Theme Toggle Button -->
+                <button onclick="toggleTheme()" id="theme-toggle-btn" class="w-10 h-10 rounded-xl flex items-center justify-center bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-amber-500 dark:text-amber-400 border border-slate-200/80 dark:border-slate-700 transition shadow-sm" aria-label="Toggle Dark Mode">
+                    <i id="theme-icon" class="fa-solid fa-sun text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-20">
+
+        <!-- ==========================================
+             HERO SECTION
+        =========================================== -->
+        <section id="hero" class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-white via-slate-50 to-accent-50/60 dark:from-slate-900 dark:via-slate-900/95 dark:to-accent-950/50 border border-slate-200/80 dark:border-slate-800 p-6 sm:p-10 lg:p-14 shadow-xl">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <!-- Hero Text Column -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-accent-100 dark:bg-accent-900/50 text-accent-700 dark:text-accent-300 text-xs sm:text-sm font-bold border border-accent-200 dark:border-accent-800">
+                        <span class="w-2 h-2 rounded-full bg-accent-500 animate-ping"></span>
+                        <span id="hero-badge">خلاصة تفاعلية لكتاب "علاقات خطرة" - د. محمد طه</span>
+                    </div>
+
+                    <h2 id="hero-title" class="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight text-slate-900 dark:text-white">
+                        لماذا أكرر نفس العلاقات المؤذية رغم اختلاف الأشخاص؟
+                    </h2>
+
+                    <p id="hero-desc" class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+                        هل تساءلت يوماً لماذا تنجذب تلقائياً لأشخاص يستنزفون طاقتك أو يعيدون فتح جراحك القديمة؟ المشكلة غالباً لا تكمن في "سوء الحظ"، بل في سيناريو نفسي خفي يُدار من داخل اللاوعي. استكشف معنا أسرار النفس البشرية لتنتقل من العلاقات المؤذية إلى العلاقات الواعية والصحية.
+                    </p>
+
+                    <!-- Core Quote Highlight Box -->
+                    <div class="relative p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-accent-600/10 via-primary-500/10 to-transparent border-r-4 rtl:border-r-4 ltr:border-r-0 ltr:border-l-4 border-accent-500 dark:bg-slate-800/70">
+                        <i class="fa-solid fa-quote-right text-2xl text-accent-500/40 mb-2 block"></i>
+                        <blockquote id="hero-quote" class="text-lg sm:text-xl font-extrabold text-slate-800 dark:text-slate-100">
+                            "ليس كل انجذاب حباً.. أحياناً يكون جرحاً قديماً يبحث عن فرصة جديدة."
+                        </blockquote>
+                        <p id="hero-quote-sub" class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2">
+                            — القاعدة الذهبية لفهم الانجذاب غير الواعي
+                        </p>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="#personas" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-accent-600 to-primary-600 hover:from-accent-500 hover:to-primary-500 text-white font-bold shadow-lg shadow-accent-600/25 transition transform hover:-translate-y-0.5">
+                            <i class="fa-solid fa-compass"></i>
+                            <span id="hero-btn-start">ابدأ رحلة الاستكشاف النفسي</span>
+                        </a>
+
+                        <a href="https://youtu.be/Ey6UUEAt-Bs?si=F-8b11W1agLJNx13" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-5 py-3.5 rounded-2xl bg-white dark:bg-slate-800 hover:bg-rose-50 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-100 font-bold border border-slate-200 dark:border-slate-700 shadow-sm transition">
+                            <i class="fa-brands fa-youtube text-rose-600 text-xl"></i>
+                            <span id="hero-btn-video">مشاهدة الفيديو الأصلي</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Hero Interactive Visual Card Column -->
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-3xl bg-white dark:bg-slate-800/90 border border-slate-200/80 dark:border-slate-700/80 p-6 shadow-2xl space-y-5">
+                        <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-700/60 pb-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-rose-500/15 text-rose-500 flex items-center justify-center">
+                                    <i class="fa-solid fa-magnifying-glass-chart text-lg"></i>
+                                </div>
+                                <div>
+                                    <h3 id="hero-card-title" class="font-bold text-sm sm:text-base">خريطة التشخيص السريع</h3>
+                                    <p id="hero-card-sub" class="text-xs text-slate-500 dark:text-slate-400">5 محطات تفاعلية لفهم الذات</p>
+                                </div>
+                            </div>
+                            <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-primary-500/15 text-primary-600 dark:text-primary-400">100% تفاعلي</span>
+                        </div>
+
+                        <!-- Interactive Station Preview List -->
+                        <div class="space-y-3 text-sm">
+                            <a href="#personas" class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 dark:bg-slate-900/60 hover:bg-accent-50 dark:hover:bg-accent-950/40 border border-slate-200/60 dark:border-slate-700/60 transition group">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-8 h-8 rounded-lg bg-accent-500/20 text-accent-600 dark:text-accent-400 font-bold flex items-center justify-center">1</span>
+                                    <span id="station-1" class="font-semibold">الأشخاص الثلاثة بداخلنا (اختبار القيادة)</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-left rtl:rotate-0 ltr:rotate-180 text-slate-400 group-hover:text-accent-500 transition"></i>
+                            </a>
+
+                            <a href="#body-signals" class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 dark:bg-slate-900/60 hover:bg-accent-50 dark:hover:bg-accent-950/40 border border-slate-200/60 dark:border-slate-700/60 transition group">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-8 h-8 rounded-lg bg-rose-500/20 text-rose-600 dark:text-rose-400 font-bold flex items-center justify-center">2</span>
+                                    <span id="station-2" class="font-semibold">كاشف إشارات الجسد المبكرة</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-left rtl:rotate-0 ltr:rotate-180 text-slate-400 group-hover:text-accent-500 transition"></i>
+                            </a>
+
+                            <a href="#masks" class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 dark:bg-slate-900/60 hover:bg-accent-50 dark:hover:bg-accent-950/40 border border-slate-200/60 dark:border-slate-700/60 transition group">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-600 dark:text-amber-400 font-bold flex items-center justify-center">3</span>
+                                    <span id="station-3" class="font-semibold">بطاقات الأقنعة النفسية ثلاثية الأبعاد</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-left rtl:rotate-0 ltr:rotate-180 text-slate-400 group-hover:text-accent-500 transition"></i>
+                            </a>
+
+                            <a href="#patterns" class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 dark:bg-slate-900/60 hover:bg-accent-50 dark:hover:bg-accent-950/40 border border-slate-200/60 dark:border-slate-700/60 transition group">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-600 dark:text-purple-400 font-bold flex items-center justify-center">4</span>
+                                    <span id="station-4" class="font-semibold">موسوعة الأنماط الخطرة في العلاقات</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-left rtl:rotate-0 ltr:rotate-180 text-slate-400 group-hover:text-accent-500 transition"></i>
+                            </a>
+
+                            <a href="#recovery" class="flex items-center justify-between p-3 rounded-2xl bg-slate-50 dark:bg-slate-900/60 hover:bg-accent-50 dark:hover:bg-accent-950/40 border border-slate-200/60 dark:border-slate-700/60 transition group">
+                                <div class="flex items-center gap-3">
+                                    <span class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 font-bold flex items-center justify-center">5</span>
+                                    <span id="station-5" class="font-semibold">مرآة العلاقات وخطة التعافي العملية</span>
+                                </div>
+                                <i class="fa-solid fa-chevron-left rtl:rotate-0 ltr:rotate-180 text-slate-400 group-hover:text-accent-500 transition"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             MODULE 1: THE THREE INNER PERSONAS
+        =========================================== -->
+        <section id="personas" class="space-y-8 scroll-mt-24">
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span id="m1-badge" class="px-3.5 py-1 rounded-full text-xs font-bold bg-accent-500/15 text-accent-600 dark:text-accent-400 border border-accent-500/20">
+                    المحطة الأولى: التحليل التفاعلي للذات
+                </span>
+                <h2 id="m1-title" class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                    الأشخاص الثلاثة بداخلنا: من يقود علاقاتك؟
+                </h2>
+                <p id="m1-subtitle" class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+                    يوضح د. محمد طه أن بداخل كل إنسان ثلاث حالات للذات (الطفل، الوالد، الراشد). عندما يقود "الطفل المجروح" أو "الوالد القاسي" اختياراتنا العاطفية، نقع في فخ العلاقات الخطرة.
+                </p>
+            </div>
+
+            <!-- 3 Personas Interactive Explorer Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="personas-cards-container">
+                <!-- Populated dynamically via JS for seamless bilingual support -->
+            </div>
+
+            <!-- Interactive Mini-Quiz: Who is driving your relationships right now? -->
+            <div class="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-8 lg:p-10 shadow-lg">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    <!-- Quiz Questions Side -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 id="quiz-title" class="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2">
+                                    <i class="fa-solid fa-sliders text-accent-500"></i>
+                                    <span>مقياس القيادة النفسية: من يتحكم في قراراتك؟</span>
+                                </h3>
+                                <p id="quiz-subtitle" class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+                                    اختر الإجابة الأقرب لردود أفعالك الحقيقية في العلاقات لترى التوزيع الفوري لشخصياتك الثلاث:
+                                </p>
+                            </div>
+                        </div>
+
+                        <div id="quiz-questions-container" class="space-y-5">
+                            <!-- Dynamically rendered 4 scenario questions -->
+                        </div>
+                    </div>
+
+                    <!-- Instant Visual Feedback & Percentage Breakdown -->
+                    <div class="lg:col-span-5 bg-slate-50 dark:bg-slate-800/70 rounded-2xl p-6 border border-slate-200/70 dark:border-slate-700/70 space-y-6 sticky top-24">
+                        <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-700 pb-4">
+                            <h4 id="quiz-result-heading" class="font-extrabold text-lg">النتيجة التحليلية الفورية</h4>
+                            <button onclick="resetPersonaQuiz()" id="quiz-reset-btn" class="text-xs font-bold text-accent-600 dark:text-accent-400 hover:underline flex items-center gap-1">
+                                <i class="fa-solid fa-rotate-right"></i>
+                                <span>إعادة ضبط</span>
+                            </button>
+                        </div>
+
+                        <!-- Progress Bars for Child, Parent, Adult -->
+                        <div class="space-y-4">
+                            <!-- Inner Child Bar -->
+                            <div class="space-y-1.5">
+                                <div class="flex justify-between text-sm font-bold">
+                                    <span id="bar-label-child" class="flex items-center gap-2 text-rose-600 dark:text-rose-400">
+                                        <i class="fa-solid fa-child-reaching"></i> الطفل الداخلي
+                                    </span>
+                                    <span id="bar-val-child" class="text-rose-600 dark:text-rose-400">50%</span>
+                                </div>
+                                <div class="w-full h-3 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                                    <div id="bar-fill-child" class="h-full bg-gradient-to-r from-rose-500 to-pink-500 rounded-full transition-all duration-500" style="width: 50%"></div>
+                                </div>
+                            </div>
+
+                            <!-- Inner Parent Bar -->
+                            <div class="space-y-1.5">
+                                <div class="flex justify-between text-sm font-bold">
+                                    <span id="bar-label-parent" class="flex items-center gap-2 text-amber-600 dark:text-amber-400">
+                                        <i class="fa-solid fa-gavel"></i> الوالد الداخلي
+                                    </span>
+                                    <span id="bar-val-parent" class="text-amber-600 dark:text-amber-400">25%</span>
+                                </div>
+                                <div class="w-full h-3 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                                    <div id="bar-fill-parent" class="h-full bg-gradient-to-r from-amber-500 to-orange-500 rounded-full transition-all duration-500" style="width: 25%"></div>
+                                </div>
+                            </div>
+
+                            <!-- The Adult Bar -->
+                            <div class="space-y-1.5">
+                                <div class="flex justify-between text-sm font-bold">
+                                    <span id="bar-label-adult" class="flex items-center gap-2 text-primary-600 dark:text-primary-400">
+                                        <i class="fa-solid fa-scale-balanced"></i> الراشد الواعي
+                                    </span>
+                                    <span id="bar-val-adult" class="text-primary-600 dark:text-primary-400">25%</span>
+                                </div>
+                                <div class="w-full h-3 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+                                    <div id="bar-fill-adult" class="h-full bg-gradient-to-r from-primary-500 to-emerald-500 rounded-full transition-all duration-500" style="width: 25%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Dynamic Diagnosis Box -->
+                        <div id="persona-diagnosis-box" class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 space-y-2">
+                            <div class="flex items-center gap-2 font-extrabold text-sm text-accent-600 dark:text-accent-400">
+                                <i class="fa-solid fa-lightbulb"></i>
+                                <span id="persona-dominant-title">القائد الحالي: الطفل الداخلي</span>
+                            </div>
+                            <p id="persona-dominant-desc" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                عندما يقود الطفل الداخلي علاقاتك، فإنك تبحث باستمرار عن الأمان المفقود وتخشى الهجر، مما قد يجعلك تقبل تنازلات مؤلمة مقابل عدم البقاء وحيداً.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             MODULE 2: BODY SIGNALS DETECTOR
+        =========================================== -->
+        <section id="body-signals" class="space-y-8 scroll-mt-24">
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span id="m2-badge" class="px-3.5 py-1 rounded-full text-xs font-bold bg-rose-500/15 text-rose-600 dark:text-rose-400 border border-rose-500/20">
+                    المحطة الثانية: الذكاء الجسدي والحدس
+                </span>
+                <h2 id="m2-title" class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                    كاشف لغة الجسد الخفية (قبل أن يبرر العقل!)
+                </h2>
+                <p id="m2-subtitle" class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+                    يؤكد الفيديو أن جسدك يلتقط الخطر النفسي قبل عقلك الواعي بكثير. العقل قد يصنع الأعذار والتبريرات، لكن الجسد لا يكذب أبداً. حدد العلامات التي تشعر بها مع الطرف الآخر:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-10 shadow-lg">
+                <!-- Interactive Checklist Column -->
+                <div class="lg:col-span-7 space-y-4">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 id="body-checklist-title" class="font-extrabold text-lg sm:text-xl">قائمة الإنذار الجسدي والنفسي المبكر</h3>
+                        <span id="body-checked-counter" class="text-xs font-bold px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">0 / 6</span>
+                    </div>
+
+                    <div id="body-signals-list" class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                        <!-- Populated via JS -->
+                    </div>
+                </div>
+
+                <!-- Interactive Somatic Gauge & Body Radar Column -->
+                <div class="lg:col-span-5 flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700/70 space-y-6">
+                    <!-- Visual Body Silhouette + Somatic Hotspots SVG -->
+                    <div class="relative w-48 h-56 flex items-center justify-center">
+                        <svg viewBox="0 0 200 240" class="w-full h-full">
+                            <!-- Silhouette Head & Torso -->
+                            <path d="M100,20 C115,20 126,32 126,47 C126,62 115,74 100,74 C85,74 74,62 74,47 C74,32 85,20 100,20 Z" fill="currentColor" class="text-slate-300 dark:text-slate-700"/>
+                            <path d="M60,85 C60,78 75,76 100,76 C125,76 140,78 140,85 L150,165 C150,172 142,175 136,170 L128,110 L128,225 L72,225 L72,110 L64,170 C58,175 50,172 50,165 Z" fill="currentColor" class="text-slate-300 dark:text-slate-700"/>
+
+                            <!-- Brain / Rationalization Hotspot -->
+                            <circle id="hotspot-head" cx="100" cy="45" r="12" class="fill-primary-500/40 transition-all duration-500" />
+                            <!-- Chest / Tightness Hotspot -->
+                            <circle id="hotspot-chest" cx="100" cy="115" r="16" class="fill-primary-500/40 transition-all duration-500" />
+                            <!-- Gut / Tension Hotspot -->
+                            <circle id="hotspot-gut" cx="100" cy="160" r="14" class="fill-primary-500/40 transition-all duration-500" />
+                        </svg>
+
+                        <!-- Gauge Percentage Badge Overlay -->
+                        <div class="absolute bottom-2 px-4 py-1.5 rounded-full bg-white/95 dark:bg-slate-900/95 shadow-md border border-slate-200 dark:border-slate-700 text-center">
+                            <span id="body-alert-percent" class="text-xl font-black text-emerald-500">0%</span>
+                        </div>
+                    </div>
+
+                    <!-- Alert Level Meter & Advice -->
+                    <div class="w-full space-y-3 text-center">
+                        <div class="text-xs font-bold uppercase tracking-wider text-slate-400" id="body-meter-label">
+                            مؤشر إنذار الحدس الجسدي
+                        </div>
+                        <div class="w-full h-3.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden p-0.5">
+                            <div id="body-alert-bar" class="h-full bg-emerald-500 rounded-full transition-all duration-500" style="width: 0%"></div>
+                        </div>
+                        <h4 id="body-alert-status" class="text-lg font-extrabold text-emerald-600 dark:text-emerald-400">
+                            حالة أمان وهدوء جسدي
+                        </h4>
+                        <p id="body-alert-desc" class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                            اختر الإشارات التي يرسلها جسدك أثناء أو بعد التواجد في العلاقة لمعرفة مستوى التحذير الذي يحاول جهازك العصبي إخبارك به.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             MODULE 3: PSYCHOLOGICAL MASKS FLIP-CARDS
+        =========================================== -->
+        <section id="masks" class="space-y-8 scroll-mt-24">
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span id="m3-badge" class="px-3.5 py-1 rounded-full text-xs font-bold bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+                    المحطة الثالثة: الأقنعة المزيفة مقابل الحقيقة
+                </span>
+                <h2 id="m3-title" class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                    الأقنعة النفسية: لماذا نخفي حقيقتنا؟
+                </h2>
+                <p id="m3-subtitle" class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+                    نحن نرتدي الأقنعة خوفاً من الرفض أو الجرح، لكن المشكلة أن القناع يمنع الحب الحقيقي من الوصول إلينا؛ لأن الطرف الآخر يحب القناع لا نسختنا الحقيقية. <strong class="text-accent-600 dark:text-accent-400">(اضغط على أي بطاقة لقلبها وكشف ما وراء القناع)</strong>
+                </p>
+            </div>
+
+            <!-- 4 Interactive 3D Flip Cards Grid -->
+            <div id="masks-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Populated dynamically via JS -->
+            </div>
+        </section>
+
+        <!-- ==========================================
+             MODULE 4: DANGEROUS RELATIONSHIP PATTERNS EXPLORER
+        =========================================== -->
+        <section id="patterns" class="space-y-8 scroll-mt-24">
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span id="m4-badge" class="px-3.5 py-1 rounded-full text-xs font-bold bg-purple-500/15 text-purple-600 dark:text-purple-400 border border-purple-500/20">
+                    المحطة الرابعة: تشريح العلاقات الخطرة
+                </span>
+                <h2 id="m4-title" class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                    الأنماط الأربعة الخطرة في العلاقات
+                </h2>
+                <p id="m4-subtitle" class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+                    استكشف الأنماط النفسية الأربعة الأخطر التي فصلها د. محمد طه، وتعلّم كيف تكتشفها وتكسر دائرتها المفرغة:
+                </p>
+            </div>
+
+            <!-- Interactive Tabs Container -->
+            <div class="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-10 shadow-lg space-y-8">
+                <!-- Tab Buttons -->
+                <div id="pattern-tabs-nav" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                    <!-- Populated via JS -->
+                </div>
+
+                <!-- Active Pattern Detailed View -->
+                <div id="pattern-detail-view" class="rounded-2xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/80 p-6 sm:p-8 transition-all">
+                    <!-- Populated via JS -->
+                </div>
+
+                <!-- Interactive Comparison Table: True Love vs. Wound Attraction -->
+                <div class="pt-4 border-t border-slate-200 dark:border-slate-800 space-y-4">
+                    <h3 id="comparison-title" class="text-xl font-extrabold text-center text-slate-900 dark:text-white">
+                        المقارنة الحاسمة: كيف تفرق بين الحب الحقيقي وانجذاب الجرح؟
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Wound Attraction Card -->
+                        <div class="p-6 rounded-2xl bg-rose-500/5 dark:bg-rose-950/25 border border-rose-500/20 space-y-3">
+                            <div class="flex items-center gap-3 text-rose-600 dark:text-rose-400 font-extrabold text-lg">
+                                <i class="fa-solid fa-fire-flame-curved"></i>
+                                <span id="comp-wound-title">الانجذاب الجرحي (علاقة خطرة)</span>
+                            </div>
+                            <ul id="comp-wound-list" class="space-y-2.5 text-sm text-slate-700 dark:text-slate-300">
+                                <!-- Populated via JS -->
+                            </ul>
+                        </div>
+
+                        <!-- True Conscious Love Card -->
+                        <div class="p-6 rounded-2xl bg-emerald-500/5 dark:bg-emerald-950/25 border border-emerald-500/20 space-y-3">
+                            <div class="flex items-center gap-3 text-emerald-600 dark:text-emerald-400 font-extrabold text-lg">
+                                <i class="fa-solid fa-seedling"></i>
+                                <span id="comp-love-title">الحب الحقيقي الواعي (علاقة صحية)</span>
+                            </div>
+                            <ul id="comp-love-list" class="space-y-2.5 text-sm text-slate-700 dark:text-slate-300">
+                                <!-- Populated via JS -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================
+             MODULE 5: RELATIONSHIP MIRROR & RECOVERY PLAN
+        =========================================== -->
+        <section id="recovery" class="space-y-8 scroll-mt-24">
+            <div class="text-center max-w-3xl mx-auto space-y-3">
+                <span id="m5-badge" class="px-3.5 py-1 rounded-full text-xs font-bold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+                    المحطة الخامسة: مرآة العلاقات وخطة التعافي
+                </span>
+                <h2 id="m5-title" class="text-2xl sm:text-4xl font-black text-slate-900 dark:text-white">
+                    خطة التعافي الرباعية لبناء علاقات صحية
+                </h2>
+                <p id="m5-subtitle" class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+                    العلاقات هي أصدق مرآة تعكس لنا جراحنا واحتياجاتنا غير المسددة. حدد الخطوات التي التزمت بالعمل عليها لتتبع تقدمك نحو التعافي العاطفي:
+                </p>
+            </div>
+
+            <div class="rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 sm:p-10 shadow-lg space-y-8">
+                <!-- Progress Header -->
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-200 dark:border-slate-800">
+                    <div>
+                        <h3 id="recovery-tracker-title" class="text-xl font-extrabold">مؤشر الجاهزية للعلاقات الصحية</h3>
+                        <p id="recovery-tracker-sub" class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">اضغط على كل خطوة بعد قراءتها والتعهد بتطبيقها في حياتك اليومية</p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="w-40 sm:w-52 h-4 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden p-0.5 border border-slate-200 dark:border-slate-700">
+                            <div id="recovery-progress-bar" class="h-full bg-gradient-to-r from-accent-500 to-emerald-500 rounded-full transition-all duration-500" style="width: 25%"></div>
+                        </div>
+                        <span id="recovery-progress-text" class="font-black text-lg text-emerald-600 dark:text-emerald-400">25%</span>
+                    </div>
+                </div>
+
+                <!-- 4 Recovery Steps Interactive Cards -->
+                <div id="recovery-steps-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Populated via JS -->
+                </div>
+
+                <!-- Interactive Personal Mirror Reflection Note -->
+                <div class="rounded-2xl bg-gradient-to-r from-accent-500/10 via-primary-500/10 to-emerald-500/10 border border-accent-500/20 p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="space-y-2 text-center md:text-start">
+                        <h4 id="mirror-pledge-title" class="text-lg font-extrabold text-slate-900 dark:text-white flex items-center justify-center md:justify-start gap-2">
+                            <i class="fa-solid fa-wand-magic-sparkles text-accent-500"></i>
+                            <span>رسالة مرآة العلاقات لك اليوم</span>
+                        </h4>
+                        <p id="mirror-pledge-quote" class="text-sm sm:text-base text-slate-700 dark:text-slate-200 font-medium">
+                            "حين تتصالح مع طفلك الداخلي وتضع الراشد الواعي على مقعد القيادة، لن تنجذب بعد اليوم لمن يؤذيك، بل لمن يشاركك النضج والسكينة."
+                        </p>
+                    </div>
+                    <button onclick="copyWisdomQuote()" id="copy-quote-btn" class="shrink-0 px-5 py-3 rounded-xl bg-accent-600 hover:bg-accent-500 text-white font-bold text-sm shadow-md transition flex items-center gap-2">
+                        <i class="fa-regular fa-copy"></i>
+                        <span id="copy-quote-text">نسخ الحكمة</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Toast Notification for Copy / Actions -->
+    <div id="toast-msg" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-sm shadow-2xl opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2">
+        <i class="fa-solid fa-circle-check text-emerald-500"></i>
+        <span id="toast-text">تم نسخ النص بنجاح!</span>
+    </div>
+
+    <!-- ==========================================
+         FOOTER WITH MANDATORY CREDIT
+    =========================================== -->
+    <footer class="mt-16 border-t border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/90 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col items-center text-center space-y-5">
+            <!-- Video Reference Pill -->
+            <a href="https://youtu.be/Ey6UUEAt-Bs?si=F-8b11W1agLJNx13" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800 hover:bg-rose-50 dark:hover:bg-slate-700 text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300 transition">
+                <i class="fa-brands fa-youtube text-rose-500 text-base"></i>
+                <span id="footer-video-ref">المصدر: فيديو "دليلك الشامل لمعرفة العلاقات الخطرة" (كتاب علاقات خطرة - د. محمد طه)</span>
+            </a>
+
+            <!-- Prominent Signature Box -->
+            <div class="w-full max-w-xl p-5 rounded-2xl bg-gradient-to-r from-accent-500/10 via-primary-500/10 to-accent-500/10 border border-accent-500/30 shadow-inner space-y-1.5">
+                <p class="text-base sm:text-lg font-black bg-gradient-to-r from-accent-600 to-primary-600 dark:from-accent-400 dark:to-primary-400 bg-clip-text text-transparent">
+                    تصميم محمد عوض خير بمساعدة Gemini 4 Argon
+                </p>
+                <p id="footer-credit-en" class="text-xs sm:text-sm font-semibold text-slate-500 dark:text-slate-400">
+                    Designed by Mohamed Awad Khair with the help of Gemini 4 Argon
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==========================================
+         APPLICATION LOGIC & BILINGUAL DATA STORE
+    =========================================== -->
+    <script>
+        // Current State
+        let currentLang = 'ar';
+        let activePatternIndex = 0;
+        let selectedBodySignals = new Set([0, 2]); // Pre-select 2 signals for instant demo engagement
+        let completedRecoverySteps = new Set([0]); // Step 1 checked initially
+        let quizAnswers = [0, 0, 1, 2]; // 0 = Child, 1 = Parent, 2 = Adult
+
+        // Complete Bilingual Dictionary
+        const i18n = {
+            ar: {
+                navBrandTitle: "بوصلة العلاقات الواعية",
+                navBrandSub: "دليلك الشامل لمعرفة العلاقات الخطرة - د. محمد طه",
+                navLinks: ["الأشخاص الثلاثة", "إشارات الجسد", "الأقنعة النفسية", "الأنماط الخطرة", "خطة التعافي"],
+                langBtnText: "English",
+                heroBadge: "خلاصة تفاعلية لكتاب «علاقات خطرة» - د. محمد طه",
+                heroTitle: "لماذا أكرر نفس العلاقات المؤذية رغم اختلاف الأشخاص؟",
+                heroDesc: "هل تساءلت يوماً لماذا تنجذب تلقائياً لأشخاص يستنزفون طاقتك أو يعيدون فتح جراحك القديمة؟ المشكلة غالباً لا تكمن في «سوء الحظ»، بل في سيناريو نفسي خفي يُدار من داخل اللاوعي. استكشف معنا أسرار النفس البشرية لتنتقل من العلاقات المؤذية إلى العلاقات الواعية والصحية.",
+                heroQuote: "\"ليس كل انجذاب حباً.. أحياناً يكون جرحاً قديماً يبحث عن فرصة جديدة.\"",
+                heroQuoteSub: "— القاعدة الذهبية لفهم الانجذاب غير الواعي",
+                heroBtnStart: "ابدأ رحلة الاستكشاف النفسي",
+                heroBtnVideo: "مشاهدة الفيديو الأصلي",
+                heroCardTitle: "خريطة التشخيص السريع",
+                heroCardSub: "5 محطات تفاعلية لفهم الذات",
+                stations: [
+                    "الأشخاص الثلاثة بداخلنا (اختبار القيادة)",
+                    "كاشف إشارات الجسد المبكرة",
+                    "بطاقات الأقنعة النفسية ثلاثية الأبعاد",
+                    "موسوعة الأنماط الخطرة في العلاقات",
+                    "مرآة العلاقات وخطة التعافي العملية"
+                ],
+
+                // Module 1: Personas
+                m1Badge: "المحطة الأولى: التحليل التفاعلي للذات",
+                m1Title: "الأشخاص الثلاثة بداخلنا: من يقود علاقاتك؟",
+                m1Subtitle: "يوضح د. محمد طه أن بداخل كل إنسان ثلاث حالات للذات (الطفل، الوالد، الراشد). عندما يقود «الطفل المجروح» أو «الوالد القاسي» اختياراتنا العاطفية، نقع في فخ العلاقات الخطرة.",
+                personas: [
+                    {
+                        id: "child",
+                        title: "الطفل الداخلي (The Inner Child)",
+                        icon: "fa-child-reaching",
+                        color: "rose",
+                        role: "حامل الجراح والاحتياجات العاطفية",
+                        desc: "يحمل ذكريات الطفولة، مخاوف الهجر والرفض، ويبحث بلهفة عن الحب غير المشروط، الاهتمام، والأمان.",
+                        danger: "خطره عند القيادة: يتعلق سريعاً، يقبل الإيذاء خوفاً من الوحدة، وينجذب لمن يشبه مصدر جرحه القديم."
+                    },
+                    {
+                        id: "parent",
+                        title: "الوالد الداخلي (The Inner Parent)",
+                        icon: "fa-gavel",
+                        color: "amber",
+                        role: "حامل القواعد والأحكام الصارمة",
+                        desc: "يمثل صوت السلطة، التقاليد، الأوامر، والنقد الذاتي أو نقد الآخرين (الصح والخطأ المطلق).",
+                        danger: "خطره عند القيادة: يحوّل العلاقة إلى محكمة دائمة، سيطرة، لوم مستمر، أو شعور قاتل بالذنب."
+                    },
+                    {
+                        id: "adult",
+                        title: "الراشد الواعي (The Adult)",
+                        icon: "fa-scale-balanced",
+                        color: "primary",
+                        role: "صانع القرار المتزن والحكيم",
+                        desc: "يرى الواقع كما هو هنا والآن، يوازن بين المشاعر والعقل، ويحترم نفسه والطرف الآخر بدون أقنعة.",
+                        danger: "ميزته عند القيادة: يضع حدوداً صحية، يميز بين الحب الحقيقي والانجذاب المرضي، ويختار علاقات ناضجة."
+                    }
+                ],
+                quizTitle: "مقياس القيادة النفسية: من يتحكم في قراراتك؟",
+                quizSubtitle: "اختر الإجابة الأقرب لردود أفعالك الحقيقية في العلاقات لترى التوزيع الفوري لشخصياتك الثلاث:",
+                quizResetBtn: "إعادة ضبط",
+                quizResultHeading: "النتيجة التحليلية الفورية",
+                barLabels: {
+                    child: "الطفل الداخلي",
+                    parent: "الوالد الداخلي",
+                    adult: "الراشد الواعي"
+                },
+                quizQuestions: [
+                    {
+                        q: "1. عندما يتأخر شريكك في الرد أو يبدو منشغلاً عنك:",
+                        options: [
+                            { text: "أشعر بقلق شديد وخوف من أنه لم يعد يحبني أو سيهجرني.", type: 0 },
+                            { text: "أغضب وأجهز قائمة عتاب قاسية لأحاسبه على تقصيره.", type: 1 },
+                            { text: "ألتمس العذر بهدوء وأعبّر لاحقاً عن احتياجي للتواصل بوضوح.", type: 2 }
+                        ]
+                    },
+                    {
+                        q: "2. ما الذي يجذبك أكثر في بدايات أي علاقة؟",
+                        options: [
+                            { text: "الشخص الغامض أو الصعب الذي أشعر أنني بحاجة لإثبات استحقاقي لحبه.", type: 0 },
+                            { text: "الشخص الذي يطيع قواعدي ويتوافق تماماً مع معاييري الصارمة.", type: 1 },
+                            { text: "الشخص الواضح، المتاح عاطفياً، الذي أشعر معه بالسكينة والأمان.", type: 2 }
+                        ]
+                    },
+                    {
+                        q: "3. عند حدوث خلاف أو تجاوز للحدود في العلاقة:",
+                        options: [
+                            { text: "أتنازل عن حقي وأعتذر حتى لو لم أخطئ كي لا أخسر الطرف الآخر.", type: 0 },
+                            { text: "أصدر أحكاماً قاطعة وألقي اللوم بالكامل على الطرف الآخر.", type: 1 },
+                            { text: "أناقش الموقف بموضوعية وأضع حداً واضحاً وهادئاً يحمي كرامتي.", type: 2 }
+                        ]
+                    },
+                    {
+                        q: "4. كيف تنظر إلى احتياجاتك العاطفية؟",
+                        options: [
+                            { text: "أنتظر من الطرف الآخر أن ينقذني ويسد كل فراغاتي القديمة.", type: 0 },
+                            { text: "أعتبر إظهار الاحتياج ضعفاً يجب كبته والترفع عنه.", type: 1 },
+                            { text: "أتحمل مسؤولية سعادتي وأشارك الطرف الآخر مودة متبادلة وناضجة.", type: 2 }
+                        ]
+                    }
+                ],
+                personaDiagnoses: {
+                    child: {
+                        title: "القائد الحالي: الطفل الداخلي المجروح",
+                        desc: "طفلك الداخلي يقود الدفة حالياً! أنت تبحث بصدق عن الحب والأمان، لكن خوفك من الهجر قد يدفعك للتعلق بأشخاص غير متاحين عاطفياً أو التنازل عن حدودك. تحتاج لتهدئة طفلك الداخلي وتسليم القيادة للراشد."
+                    },
+                    parent: {
+                        title: "القائد الحالي: الوالد الداخلي الصارم",
+                        desc: "الوالد الداخلي يسيطر على قراراتك! أنت تميل للحذر الشديد، إطلاق الأحكام، أو محاولة السيطرة لتجنب الخذلان. هذه الصرامة تحميك ظاهرياً لكنها تمنع الدفء والتلقائية في العلاقات."
+                    },
+                    adult: {
+                        title: "القائد الحالي: الراشد الواعي والمتزن",
+                        desc: "أحسنت! الراشد الواعي يقود علاقاتك بحكمة. أنت تستمع لمشاعر طفلك الداخلي وتحترم قيمك، لكنك تتخذ قراراتك بعقلانية وهدوء وتضع حدوداً صحية تحميك من الاستغلال."
+                    }
+                },
+
+                // Module 2: Body Signals
+                m2Badge: "المحطة الثانية: الذكاء الجسدي والحدس",
+                m2Title: "كاشف لغة الجسد الخفية (قبل أن يبرر العقل!)",
+                m2Subtitle: "يؤكد الفيديو أن جسدك يلتقط الخطر النفسي قبل عقلك الواعي بكثير. العقل قد يصنع الأعذار والتبريرات، لكن الجسد لا يكذب أبداً. حدد العلامات التي تشعر بها مع الطرف الآخر:",
+                bodyChecklistTitle: "قائمة الإنذار الجسدي والنفسي المبكر",
+                bodyMeterLabel: "مؤشر إنذار الحدس الجسدي",
+                bodySignals: [
+                    { title: "انقباض غير مبرر في الصدر", desc: "شعور بضيق في التنفس أو ثقل في الصدر عند التحدث معه أو التفكير فيه.", zone: "chest" },
+                    { title: "توتر غريب في المعدة والأعصاب", desc: "قلق جسدي مفاجئ وكأنك تمشي على قشر بيض خوفاً من ردة فعله.", zone: "gut" },
+                    { title: "تبرير العقل المستمر للإشارات الحمراء", desc: "عقلك يخترع أعذاراً دائمة لتصرفاته المؤذية بينما حدسك يصرخ بالخطر.", zone: "head" },
+                    { title: "استنزاف كامل للطاقة بعد اللقاء", desc: "تشعر بإرهاق نفسي وجسدي شديد وتشوش ذهني بعد كل تواصل بينكما.", zone: "head" },
+                    { title: "الخوف من الظهور على طبيعتك", desc: "تراقب كل كلمة وتصرف لأنك لا تشعر بالأمان العاطفي الكافي.", zone: "chest" },
+                    { title: "شعور مزمن بالذنب والتقصير", desc: "تشعر دائماً أنك المتهم والمقصر مهما قدمت من تضحيات.", zone: "gut" }
+                ],
+                bodyAlertLevels: [
+                    {
+                        max: 1,
+                        status: "حالة أمان وهدوء جسدي",
+                        desc: "جهازك العصبي يشعر بالطمأنينة والسكينة في هذه العلاقة. استمر في ملاحظة مشاعرك بوعي.",
+                        color: "emerald"
+                    },
+                    {
+                        max: 3,
+                        status: "إنذار متوسط: انتبه لحدسك ولا تبرر!",
+                        desc: "جسدك يرسل إشارات تحذيرية واضحة (انقباض أو توتر). توقف عن إسكات صوتك الداخلي بالتبريرات المنطقية وراقب الموقف بعين الراشد.",
+                        color: "amber"
+                    },
+                    {
+                        max: 6,
+                        status: "إنذار مرتفع جداً: علاقة مستنزفة أو خطرة!",
+                        desc: "جسدك في حالة استنفار قصوى! هذه العلامات تؤكد وجود تهديد لأمانك النفسي. لا تتجاهل انقباض صدرك وتوترك، وابدأ فوراً بوضع حدود صارمة.",
+                        color: "rose"
+                    }
+                ],
+
+                // Module 3: Masks
+                m3Badge: "المحطة الثالثة: الأقنعة المزيفة مقابل الحقيقة",
+                m3Title: "الأقنعة النفسية: لماذا نخفي حقيقتنا؟",
+                m3Subtitle: "نحن نرتدي الأقنعة خوفاً من الرفض أو الجرح، لكن المشكلة أن القناع يمنع الحب الحقيقي من الوصول إلينا؛ لأن الطرف الآخر يحب القناع لا نسختنا الحقيقية. (اضغط على أي بطاقة لقلبها وكشف ما وراء القناع)",
+                masksFlipHint: "اضغط لكشف الحقيقة الداخلية",
+                masksBackHint: "اضغط للعودة إلى القناع",
+                masksOuterLabel: "القناع الخارجي",
+                masksInnerLabel: "الحقيقة الداخلية المخفية",
+                masksImpactLabel: "أثره على العلاقة:",
+                masks: [
+                    {
+                        outerTitle: "قناع القوة المفرطة والصلابة",
+                        outerDesc: "«أنا لا أحتاج أحداً، لا أتأثر بشيء، وأستطيع تحمل كل الصدمات بمفردي.»",
+                        icon: "fa-shield-halved",
+                        innerTitle: "خوف عميق من الضعف والخذلان",
+                        innerDesc: "طفل داخلي مرعوب من أن يطلب المساعدة فيُرفض أو يُستغل ضعفه كما حدث في الماضي.",
+                        impact: "يجذب أشخاصاً اتكاليين يستغلون قوتك ولا يمنحونك أي احتواء أو رعاية."
+                    },
+                    {
+                        outerTitle: "قناع الإرضاء والتضحية الدائمة",
+                        outerDesc: "«سأفعل أي شيء لإسعادك، راحتك أهم من راحتي، ولا أستطيع قول كلمة لا.»",
+                        icon: "fa-masks-theater",
+                        innerTitle: "رعب من الهجر وعدم الاستحقاق",
+                        innerDesc: "اعتقاد داخلي بأنك لا تستحق الحب لذاتك، بل يجب أن «تشتري» القبول بالتنازلات والخدمات.",
+                        impact: "يدخلك في علاقات استغلالية تتحول فيها إلى شمعة تحترق لإضاءة حياة غيرك."
+                    },
+                    {
+                        outerTitle: "قناع الثقة الزائفة والكمال",
+                        outerDesc: "«أنا مثالي، لا أخطئ أبداً، وأظهر دائماً بأفضل صورة أمام الجميع.»",
+                        icon: "fa-crown",
+                        innerTitle: "شعور دفين بالنقص والهشاشة",
+                        innerDesc: "خوف شديد من النقد والوصم، وشعور بأن أي خطأ بسيط سيجعل الآخرين ينفضّون من حولك.",
+                        impact: "يمنع الحميمية الحقيقية؛ لأن أحداً لا يستطيع الاقتراب من إنسان يرتدي درع الكمال طوال الوقت."
+                    },
+                    {
+                        outerTitle: "قناع البرود واللامبالاة",
+                        outerDesc: "«لا يهمني بقاء أحد أو رحيله، مشاعري باردة ولا أتعلق بأي شخص.»",
+                        icon: "fa-snowflake",
+                        innerTitle: "فزع من التعلق وفقدان السيطرة",
+                        innerDesc: "محاولة دفاعية لتخدير القلب مسبقاً حتى لا يتكرر ألم الفقد أو الخيانة القديمة.",
+                        impact: "يحرمك من دفء المشاركة الحقيقية ويبقيك في عزلة شعورية رغم وجود الناس حولك."
+                    }
+                ],
+
+                // Module 4: Dangerous Patterns
+                m4Badge: "المحطة الرابعة: تشريح العلاقات الخطرة",
+                m4Title: "الأنماط الأربعة الخطرة في العلاقات",
+                m4Subtitle: "استكشف الأنماط النفسية الأربعة الأخطر التي فصلها د. محمد طه، وتعلّم كيف تكتشفها وتكسر دائرتها المفرغة:",
+                patternLabels: {
+                    mechanism: "كيف يعمل هذا النمط نفسياً؟",
+                    example: "مثال واقعي من الحياة",
+                    solution: "مفتاح الخروج والتعافي"
+                },
+                patterns: [
+                    {
+                        tabTitle: "1. الانجذاب لمصدر الجرح",
+                        fullTitle: "الانجذاب لمصدر الجرح القديم (إعادة تمثيل الصدمة)",
+                        icon: "fa-magnet",
+                        color: "rose",
+                        mechanism: "يميل اللاوعي للانجذاب لشخص يحمل نفس صفات من جرحنا في الطفولة (كالأب القاسي أو الأم المهملة)، في محاولة يائسة لإعادة كتابة القصة القديمة وتغيير نهايتها هذه المرة!",
+                        example: "شخص نشأ مع أب ناقد لا يعجبه شيء، فينجذب لاشعورياً لشريك دائم النقد، ويقضي سنوات يحاول إثبات جدارته له ليحصل على الاعتراف الذي حُرم منه طفلاً.",
+                        solution: "إدراك أن الشريك الحالي لن يعالج جرح الطفولة، وأن التصالح مع الماضي يتم داخلك أنت أولاً وليس عبر إعادة تمثيل الألم."
+                    },
+                    {
+                        tabTitle: "2. كبش الفداء",
+                        fullTitle: "نمط كبش الفداء (حامل الذنب الدائم)",
+                        icon: "fa-weight-hanging",
+                        color: "amber",
+                        mechanism: "يتم وضع شخص واحد في الأسرة أو العلاقة في قفص الاتهام دائماً، ليحمل أخطاء وتوترات الجميع؛ مما يمنح الطرف الآخر شعوراً زائفاً بالبراءة والراحة.",
+                        example: "شريك يلومك على عصبيته، وعلى فشل خططه، وحتى على سوء مزاجه، وتجد نفسك تعتذر باستمرار عن أشياء لم تقترفها للحفاظ على هدوء البيت.",
+                        solution: "رفض لعب دور المتهم، التوقف عن الاعتذار التلقائي عن أخطاء غيرك، وإعادة المسؤولية العاطفية لصاحبها الحقيقي."
+                    },
+                    {
+                        tabTitle: "3. الاستغلال النفسي",
+                        fullTitle: "الاستغلال النفسي والعاطفي المشروط",
+                        icon: "fa-hand-holding-heart",
+                        color: "purple",
+                        mechanism: "علاقة تقوم على المنفعة النفسية أو المادية من طرف واحد، حيث يُستخدم الحب والاهتمام كأداة للابتزاز العاطفي والسيطرة، ويُسحب القبول فور توقفك عن العطاء.",
+                        example: "شخص يغدق عليك المديح عندما تلبي طلباته وتلغي شخصيتك، لكنه يتحول إلى الصمت العقابي أو القسوة بمجرد أن تعبر عن رأي مستقل أو تطلب حقك.",
+                        solution: "التفريق بين العطاء الصحي المتبادل وبين الاستنزاف، وتعلّم قول «لا» دون شعور بالذنب."
+                    },
+                    {
+                        tabTitle: "4. الإسقاط النفسي",
+                        fullTitle: "الإسقاط النفسي والتماهي الإسقاطي",
+                        icon: "fa-clone",
+                        color: "primary",
+                        mechanism: "يقوم الطرف المؤذي بإسقاط صفاته السلبية المرفوضة (كالخيانة، الغضب، أو الأنانية) عليك، ويعاملك على أساسها بضغط مستمر حتى يدفعك لاشعورياً للتصرف بتلك الصفة فعلاً!",
+                        example: "شريك لديه رغبة في السيطرة أو الغضب، فيتهمك طوال الوقت بأنك «عدواني ونكدي» ويستفزك ببرود حتى تنفجر غضباً، فيقول لك: «أرأيت؟ أثبتُّ لك أنك عصبي!»",
+                        solution: "الوعي بلحظة الاستفزاز، عدم ابتلاع الطعم أو التماهي مع الصورة التي يسقطها عليك، والتمسك بحقيقتك الهادئة."
+                    }
+                ],
+                comparisonTitle: "المقارنة الحاسمة: كيف تفرق بين الحب الحقيقي وانجذاب الجرح؟",
+                compWoundTitle: "الانجذاب الجرحي (علاقة خطرة)",
+                compWoundList: [
+                    "يبدأ بشغف ناري ساحق، هوس، وقلق مستمر من الفقد.",
+                    "تشعر فيه أنك بحاجة لإنقاذ الطرف الآخر أو إصلاحه لكي يحبك.",
+                    "يعتمد على الدراما، الشد والجذب، وغياب الأمان العاطفي.",
+                    "يجعلك تفقد هويتك وتبتعد عن نفسك وعن سلامك الداخلي."
+                ],
+                compLoveTitle: "الحب الحقيقي الواعي (علاقة صحية)",
+                compLoveList: [
+                    "ينمو بهدوء وثبات، ويمنحك شعوراً بالسكينة والاطمئنان الجسدي.",
+                    "تقبل فيه الطرف الآخر كما هو الآن دون رغبة في تغييره أو إنقاذه.",
+                    "يقوم على الوضوح، الاحترام المتبادل، والقدرة على الاختلاف بأمان.",
+                    "يساعدك على النمو والازدهار مع الاحتفاظ باستقلالك وشخصيتك."
+                ],
+
+                // Module 5: Recovery Plan
+                m5Badge: "المحطة الخامسة: مرآة العلاقات وخطة التعافي",
+                m5Title: "خطة التعافي الرباعية لبناء علاقات صحية",
+                m5Subtitle: "العلاقات هي أصدق مرآة تعكس لنا جراحنا واحتياجاتنا غير المسددة. حدد الخطوات التي التزمت بالعمل عليها لتتبع تقدمك نحو التعافي العاطفي:",
+                recoveryTrackerTitle: "مؤشر الجاهزية للعلاقات الصحية",
+                recoveryTrackerSub: "اضغط على كل خطوة بعد قراءتها والتعهد بتطبيقها في حياتك اليومية",
+                recoverySteps: [
+                    {
+                        stepNum: "الخطوة الأولى",
+                        title: "فهم النفس والجراح القديمة أولاً",
+                        desc: "بدلاً من السؤال: «لماذا يفعلون بي ذلك؟» اسأل نفسك بصدق: «ما الجرح القديم بداخلي الذي يجعلني أقبل هذا النوع من المعاملة؟» تصالح مع طفلك الداخلي وامنحه الأمان الذي يبحث عنه.",
+                        actionText: "تعهدت بفهم جراحي القديمة"
+                    },
+                    {
+                        stepNum: "الخطوة الثانية",
+                        title: "ملاحظة الأنماط المتكررة بوعي",
+                        desc: "راقب القاسم المشترك في علاقاتك السابقة والحالية. هل تلعب دائماً دور المنقذ؟ أم الضحية؟ أم كبش الفداء؟ رؤية النمط بوضوح هي نصف العلاج.",
+                        actionText: "أراقب أنماطي المتكررة بوعي"
+                    },
+                    {
+                        stepNum: "الخطوة الثالثة",
+                        title: "وضع حدود نفسية صحية وواضحة",
+                        desc: "الحدود ليست جدراناً للعزلة، بل هي بوابات تحدد ما تقبله وما ترفضه لحماية كرامتك وسلامك النفسي دون قسوة ودون شعور بالذنب.",
+                        actionText: "أضع حدوداً صحية تحميني"
+                    },
+                    {
+                        stepNum: "الخطوة الرابعة",
+                        title: "التفريق بين الحب الحقيقي والانجذاب الجرحي",
+                        desc: "لا تنخدع بشدة اللهفة الأولى أو الدراما العاطفية. اختر بوعي الراشد العلاقة التي تمنح جسدك وقلبك السكينة، الوضوح، والاحترام المتبادل.",
+                        actionText: "أختار الحب الواعي والآمن"
+                    }
+                ],
+                mirrorPledgeTitle: "رسالة مرآة العلاقات لك اليوم",
+                mirrorPledgeQuote: "\"حين تتصالح مع طفلك الداخلي وتضع الراشد الواعي على مقعد القيادة، لن تنجذب بعد اليوم لمن يؤذيك، بل لمن يشاركك النضج والسكينة.\"",
+                copyQuoteText: "نسخ الحكمة",
+                toastCopied: "تم نسخ الحكمة إلى الحافظة بنجاح!",
+                footerVideoRef: "المصدر: فيديو «دليلك الشامل لمعرفة العلاقات الخطرة» (كتاب علاقات خطرة - د. محمد طه)"
+            },
+
+            en: {
+                navBrandTitle: "Conscious Relationships Compass",
+                navBrandSub: "Comprehensive Guide to Dangerous Relationships - Dr. Mohamed Taha",
+                navLinks: ["Three Personas", "Body Signals", "Psychological Masks", "Dangerous Patterns", "Recovery Plan"],
+                langBtnText: "العربية",
+                heroBadge: "Interactive Guide based on 'Dangerous Relationships' by Dr. Mohamed Taha",
+                heroTitle: "Why Do I Keep Repeating the Same Painful Relationships?",
+                heroDesc: "Have you ever wondered why you are automatically drawn to people who drain your energy or reopen old wounds? The issue is rarely 'bad luck'—it is a hidden psychological script run by the unconscious mind. Explore the secrets of human psychology to move from toxic cycles to conscious, healthy connections.",
+                heroQuote: "\"Not every attraction is love... sometimes it is an old wound looking for a new opportunity.\"",
+                heroQuoteSub: "— The Golden Rule of Unconscious Attraction",
+                heroBtnStart: "Start Psychological Exploration",
+                heroBtnVideo: "Watch Original Video",
+                heroCardTitle: "Quick Diagnostic Roadmap",
+                heroCardSub: "5 Interactive Self-Discovery Modules",
+                stations: [
+                    "The Three Inner Personas (Who's Driving?)",
+                    "Early Body Signals Detector",
+                    "3D Psychological Masks Flip-Cards",
+                    "Dangerous Relationship Patterns Explorer",
+                    "Relationship Mirror & Recovery Action Plan"
+                ],
+
+                // Module 1: Personas
+                m1Badge: "Module 1: Transactional Self-Analysis",
+                m1Title: "The Three Inner Personas: Who Is Driving Your Relationships?",
+                m1Subtitle: "Dr. Mohamed Taha explains that inside every person live three ego states (The Inner Child, The Inner Parent, and The Adult). When the 'Wounded Child' or 'Harsh Parent' drives our choices, we fall into dangerous relationship traps.",
+                personas: [
+                    {
+                        id: "child",
+                        title: "The Inner Child (الطفل الداخلي)",
+                        icon: "fa-child-reaching",
+                        color: "rose",
+                        role: "Carrier of Childhood Wounds & Needs",
+                        desc: "Holds early memories, fears of abandonment and rejection, and desperately craves unconditional love, attention, and safety.",
+                        danger: "Danger when driving: Attaches too quickly, tolerates mistreatment out of fear of loneliness, and chases familiar pain."
+                    },
+                    {
+                        id: "parent",
+                        title: "The Inner Parent (الوالد الداخلي)",
+                        icon: "fa-gavel",
+                        color: "amber",
+                        role: "Keeper of Rules & Strict Judgments",
+                        desc: "Represents authority figures, rigid rules, commands, and harsh criticism of self or others (absolute right vs. wrong).",
+                        danger: "Danger when driving: Turns relationships into a courtroom of control, constant blame, or chronic guilt."
+                    },
+                    {
+                        id: "adult",
+                        title: "The Conscious Adult (الراشد الواعي)",
+                        icon: "fa-scale-balanced",
+                        color: "primary",
+                        role: "Calm, Rational Decision-Maker",
+                        desc: "Sees reality objectively in the here and now, balances emotion with logic, and respects both self and partner authentically.",
+                        danger: "Strength when driving: Sets healthy boundaries, distinguishes true love from trauma bonding, and builds mature bonds."
+                    }
+                ],
+                quizTitle: "Relationship Driver Quiz: Who Is Steering Your Choices?",
+                quizSubtitle: "Select the response closest to your real-life reactions to see your instant Inner Persona breakdown:",
+                quizResetBtn: "Reset",
+                quizResultHeading: "Instant Analytical Breakdown",
+                barLabels: {
+                    child: "Inner Child",
+                    parent: "Inner Parent",
+                    adult: "Conscious Adult"
+                },
+                quizQuestions: [
+                    {
+                        q: "1. When your partner takes a long time to reply or seems distant:",
+                        options: [
+                            { text: "I panic inside and fear they no longer love me or will abandon me.", type: 0 },
+                            { text: "I get angry and prepare a harsh lecture to hold them accountable.", type: 1 },
+                            { text: "I stay calm and later communicate my need for connection clearly.", type: 2 }
+                        ]
+                    },
+                    {
+                        q: "2. What attracts you most at the beginning of a relationship?",
+                        options: [
+                            { text: "Someone mysterious or hard-to-get whose love I feel I must earn.", type: 0 },
+                            { text: "Someone compliant who strictly follows my rules and standards.", type: 1 },
+                            { text: "Someone emotionally available, clear, and peaceful to be around.", type: 2 }
+                        ]
+                    },
+                    {
+                        q: "3. When a conflict or boundary violation happens:",
+                        options: [
+                            { text: "I give up my rights and apologize even when not at fault so they won't leave.", type: 0 },
+                            { text: "I issue strict judgments and put 100% of the blame on the other person.", type: 1 },
+                            { text: "I address the issue objectively and set a calm, firm boundary.", type: 2 }
+                        ]
+                    },
+                    {
+                        q: "4. How do you view your emotional needs?",
+                        options: [
+                            { text: "I wait for my partner to rescue me and heal all my old voids.", type: 0 },
+                            { text: "I see emotional needs as a weakness that must be suppressed.", type: 1 },
+                            { text: "I take responsibility for my well-being and share mutual mature care.", type: 2 }
+                        ]
+                    }
+                ],
+                personaDiagnoses: {
+                    child: {
+                        title: "Current Driver: The Wounded Inner Child",
+                        desc: "Your Inner Child is currently steering! You genuinely seek love and safety, but fear of abandonment may push you toward emotionally unavailable partners or sacrificing boundaries. Soothe your inner child and hand the wheel to the Adult."
+                    },
+                    parent: {
+                        title: "Current Driver: The Strict Inner Parent",
+                        desc: "Your Inner Parent is dominating your choices! You lean toward hyper-vigilance, judgment, or control to avoid getting hurt. While this armor protects you superficially, it blocks warmth and genuine intimacy."
+                    },
+                    adult: {
+                        title: "Current Driver: The Conscious Adult",
+                        desc: "Well done! The Conscious Adult is guiding your relationships with wisdom. You acknowledge your inner child's feelings and honor your values, while making calm decisions and maintaining healthy boundaries."
+                    }
+                },
+
+                // Module 2: Body Signals
+                m2Badge: "Module 2: Somatic Intelligence & Intuition",
+                m2Title: "Hidden Body Signals Detector (Before the Mind Rationalizes!)",
+                m2Subtitle: "The video highlights that your body detects psychological danger long before your conscious mind does. The mind invents excuses, but the body never lies. Check the signs you experience around the other person:",
+                bodyChecklistTitle: "Early Physical & Emotional Warning Checklist",
+                bodyMeterLabel: "Body Intuition Alert Level",
+                bodySignals: [
+                    { title: "Unexplained Chest Tightness", desc: "Feeling shortness of breath or heaviness in your chest when talking or thinking about them.", zone: "chest" },
+                    { title: "Strange Gut & Nervous Tension", desc: "Sudden physical anxiety, as if walking on eggshells fearing their reaction.", zone: "gut" },
+                    { title: "Mind Rationalizing Red Flags", desc: "Your intellect constantly makes excuses for hurtful behavior while your gut screams danger.", zone: "head" },
+                    { title: "Complete Energy Depletion", desc: "Feeling emotionally exhausted and mentally foggy after every interaction.", zone: "head" },
+                    { title: "Fear of Being Your Authentic Self", desc: "Filtering every word and action because you do not feel emotionally safe.", zone: "chest" },
+                    { title: "Chronic Unexplained Guilt", desc: "Constantly feeling like you are at fault or not doing enough no matter how much you sacrifice.", zone: "gut" }
+                ],
+                bodyAlertLevels: [
+                    {
+                        max: 1,
+                        status: "State of Physical Safety & Calm",
+                        desc: "Your nervous system feels safe and regulated in this connection. Continue practicing mindful self-awareness.",
+                        color: "emerald"
+                    },
+                    {
+                        max: 3,
+                        status: "Moderate Alert: Listen to Your Gut, Stop Rationalizing!",
+                        desc: "Your body is sending clear early warning signals (tension or tightness). Stop silencing your intuition with logical excuses and observe with your Adult self.",
+                        color: "amber"
+                    },
+                    {
+                        max: 6,
+                        status: "High Alert: Draining or Dangerous Relationship!",
+                        desc: "Your nervous system is in survival mode! These somatic signals confirm a threat to your emotional safety. Do not ignore your chest tightness—establish firm boundaries immediately.",
+                        color: "rose"
+                    }
+                ],
+
+                // Module 3: Masks
+                m3Badge: "Module 3: False Masks vs. Inner Truth",
+                m3Title: "Psychological Masks: Why Do We Hide Our True Selves?",
+                m3Subtitle: "We wear masks out of fear of rejection or pain, but the tragedy is that a mask blocks real love from reaching us—because the other person falls in love with the mask, not the real us. (Click any card to flip and reveal the hidden truth)",
+                masksFlipHint: "Click to reveal inner reality",
+                masksBackHint: "Click to flip back to mask",
+                masksOuterLabel: "The Outer Mask",
+                masksInnerLabel: "The Hidden Inner Reality",
+                masksImpactLabel: "Impact on Relationships:",
+                masks: [
+                    {
+                        outerTitle: "Mask of Hyper-Strength & Invulnerability",
+                        outerDesc: "\"I don't need anyone, nothing hurts me, and I can carry every burden alone.\"",
+                        icon: "fa-shield-halved",
+                        innerTitle: "Deep Fear of Vulnerability & Letdown",
+                        innerDesc: "An inner child terrified of asking for help only to be rejected or have their weakness used against them.",
+                        impact: "Attracts dependent takers who exploit your strength while offering zero emotional support in return."
+                    },
+                    {
+                        outerTitle: "Mask of People-Pleasing & Self-Sacrifice",
+                        outerDesc: "\"I will do anything to make you happy, your comfort comes first, and I can never say no.\"",
+                        icon: "fa-masks-theater",
+                        innerTitle: "Terror of Abandonment & Unworthiness",
+                        innerDesc: "A hidden belief that you are not lovable as you are, so you must 'buy' acceptance through constant service.",
+                        impact: "Traps you in exploitative relationships where you burn yourself out to keep others warm."
+                    },
+                    {
+                        outerTitle: "Mask of Over-Confidence & Perfection",
+                        outerDesc: "\"I am flawless, I never make mistakes, and I always appear superior and in control.\"",
+                        icon: "fa-crown",
+                        innerTitle: "Buried Insecurity & Fragile Self-Worth",
+                        innerDesc: "Intense fear of criticism and shame, believing any small flaw will cause others to reject you.",
+                        impact: "Prevents authentic intimacy, as no one can truly connect with someone wearing armor 24/7."
+                    },
+                    {
+                        outerTitle: "Mask of Cold Detachment & Indifference",
+                        outerDesc: "\"I don't care who stays or leaves; I keep my emotions cold and never get attached.\"",
+                        icon: "fa-snowflake",
+                        innerTitle: "Dread of Attachment & Losing Control",
+                        innerDesc: "A defensive attempt to numb the heart in advance so old wounds of loss or betrayal never happen again.",
+                        impact: "Deprives you of the warmth of genuine connection and keeps you emotionally isolated."
+                    }
+                ],
+
+                // Module 4: Dangerous Patterns
+                m4Badge: "Module 4: Anatomy of Toxic Dynamics",
+                m4Title: "The 4 Dangerous Relationship Patterns",
+                m4Subtitle: "Explore the four most dangerous psychological patterns detailed by Dr. Mohamed Taha, and learn how to spot them and break free:",
+                patternLabels: {
+                    mechanism: "Psychological Mechanism",
+                    example: "Real-Life Example",
+                    solution: "Key to Breaking Free"
+                },
+                patterns: [
+                    {
+                        tabTitle: "1. Attraction to the Wound",
+                        fullTitle: "Attraction to the Wound Source (Repetition Compulsion)",
+                        icon: "fa-magnet",
+                        color: "rose",
+                        mechanism: "The unconscious mind is drawn to partners who share the traits of those who wounded us in childhood (e.g., a harsh father or distant mother), in a desperate attempt to rewrite the old painful story and win their love this time!",
+                        example: "Growing up with an impossible-to-please parent, then unconsciously choosing a hyper-critical partner and spending years trying to prove your worth to finally get the validation you missed as a child.",
+                        solution: "Realize that a current partner cannot heal a childhood wound; healing happens internally by grieving the past and reparenting yourself."
+                    },
+                    {
+                        tabTitle: "2. The Scapegoat",
+                        fullTitle: "The Scapegoat Pattern (Bearing All the Blame)",
+                        icon: "fa-weight-hanging",
+                        color: "amber",
+                        mechanism: "One person in a family or relationship is constantly placed in the dock to carry everyone else's mistakes and tensions, giving the other party a false sense of innocence and relief.",
+                        example: "A partner blames you for their anger, their failed plans, and even their bad mood—and you find yourself apologizing for things you never did just to keep temporary peace.",
+                        solution: "Refuse to play the defendant role, stop apologizing for others' actions, and return emotional responsibility to its rightful owner."
+                    },
+                    {
+                        tabTitle: "3. Psychological Exploitation",
+                        fullTitle: "Psychological & Conditional Exploitation",
+                        icon: "fa-hand-holding-heart",
+                        color: "purple",
+                        mechanism: "A one-sided relationship built on narcissistic or practical utility, where affection is used as a reward for compliance and immediately withdrawn the moment you express independent needs.",
+                        example: "Someone showers you with praise when you serve their interests, but switches to silent treatment or cruelty the moment you say 'no' or ask for reciprocity.",
+                        solution: "Distinguish between healthy mutual giving and emotional extortion, and practice saying 'no' without guilt."
+                    },
+                    {
+                        tabTitle: "4. Psychological Projection",
+                        fullTitle: "Projection & Projective Identification",
+                        icon: "fa-clone",
+                        color: "primary",
+                        mechanism: "The toxic partner projects their own unacknowledged traits (anger, deceit, selfishness) onto you, and pressures/provokes you relentlessly until you actually start acting out that exact trait!",
+                        example: "A partner harbouring hidden hostility accuses you daily of being 'aggressive and dramatic,' provoking you coldly until you finally snap—then says: 'See? I proved you're the crazy one!'",
+                        solution: "Recognize the provocation trap early, refuse to swallow the bait or internalize their projection, and stay grounded in your calm reality."
+                    }
+                ],
+                comparisonTitle: "The Decisive Comparison: True Love vs. Wound-Driven Attraction",
+                compWoundTitle: "Wound Attraction (Dangerous Relationship)",
+                compWoundList: [
+                    "Starts with overwhelming obsession, intense highs/lows, and constant anxiety.",
+                    "Makes you feel you must rescue, fix, or prove your worth to be loved.",
+                    "Feeds on drama, push-and-pull dynamics, and emotional insecurity.",
+                    "Causes you to lose your identity and inner peace."
+                ],
+                compLoveTitle: "Conscious True Love (Healthy Relationship)",
+                compLoveList: [
+                    "Grows steadily with warmth, bringing physical calm and nervous system safety.",
+                    "Accepts the partner as they are right now without trying to fix or rescue them.",
+                    "Built on clarity, mutual respect, and safety during disagreements.",
+                    "Empowers your personal growth while preserving your individuality."
+                ],
+
+                // Module 5: Recovery Plan
+                m5Badge: "Module 5: Relationship Mirror & Recovery Plan",
+                m5Title: "The 4-Step Recovery Plan for Healthy Relationships",
+                m5Subtitle: "Relationships are the truest mirror reflecting our unhealed wounds and unmet needs. Check off the steps you commit to practicing to track your emotional recovery readiness:",
+                recoveryTrackerTitle: "Healthy Relationship Readiness Tracker",
+                recoveryTrackerSub: "Click each step as you read and commit to applying it in your life",
+                recoverySteps: [
+                    {
+                        stepNum: "Step 1",
+                        title: "Understand Yourself & Old Wounds First",
+                        desc: "Instead of asking 'Why do they treat me like this?', honestly ask: 'What old wound inside me makes me tolerate this treatment?' Reconnect with your inner child and become their primary source of safety.",
+                        actionText: "Committed to understanding my wounds"
+                    },
+                    {
+                        stepNum: "Step 2",
+                        title: "Consciously Notice Repeating Patterns",
+                        desc: "Observe the common denominator across your past and present connections. Do you always play the rescuer? The victim? The scapegoat? Seeing the pattern clearly is half the cure.",
+                        actionText: "Observing my repeating patterns"
+                    },
+                    {
+                        stepNum: "Step 3",
+                        title: "Set Clear, Healthy Boundaries",
+                        desc: "Boundaries are not walls of isolation; they are gates that define what you accept and what you refuse in order to protect your dignity and peace without guilt.",
+                        actionText: "Setting healthy boundaries"
+                    },
+                    {
+                        stepNum: "Step 4",
+                        title: "Distinguish True Love from Wound Attraction",
+                        desc: "Do not be fooled by intense initial chemistry or emotional drama. With your Conscious Adult, choose relationships that bring your body and heart peace, clarity, and mutual respect.",
+                        actionText: "Choosing conscious, safe love"
+                    }
+                ],
+                mirrorPledgeTitle: "Today's Relationship Mirror Message for You",
+                mirrorPledgeQuote: "\"When you make peace with your inner child and place the Conscious Adult in the driver's seat, you will no longer be drawn to those who hurt you, but to those who share maturity and serenity.\"",
+                copyQuoteText: "Copy Wisdom",
+                toastCopied: "Wisdom copied to clipboard!",
+                footerVideoRef: "Source: 'Your Comprehensive Guide to Understanding Dangerous Relationships' (Book: Dangerous Relationships - Dr. Mohamed Taha)"
+            }
+        };
+
+        // ==========================================
+        // RENDER FUNCTIONS
+        // ==========================================
+
+        function renderAll() {
+            const t = i18n[currentLang];
+
+            // Update HTML dir & lang attributes
+            document.documentElement.lang = currentLang;
+            document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+
+            // Navbar
+            document.getElementById('nav-brand-title').textContent = t.navBrandTitle;
+            document.getElementById('nav-brand-sub').textContent = t.navBrandSub;
+            document.getElementById('nav-link-1').textContent = t.navLinks[0];
+            document.getElementById('nav-link-2').textContent = t.navLinks[1];
+            document.getElementById('nav-link-3').textContent = t.navLinks[2];
+            document.getElementById('nav-link-4').textContent = t.navLinks[3];
+            document.getElementById('nav-link-5').textContent = t.navLinks[4];
+            document.getElementById('lang-btn-text').textContent = t.langBtnText;
+
+            // Hero
+            document.getElementById('hero-badge').textContent = t.heroBadge;
+            document.getElementById('hero-title').textContent = t.heroTitle;
+            document.getElementById('hero-desc').textContent = t.heroDesc;
+            document.getElementById('hero-quote').textContent = t.heroQuote;
+            document.getElementById('hero-quote-sub').textContent = t.heroQuoteSub;
+            document.getElementById('hero-btn-start').textContent = t.heroBtnStart;
+            document.getElementById('hero-btn-video').textContent = t.heroBtnVideo;
+            document.getElementById('hero-card-title').textContent = t.heroCardTitle;
+            document.getElementById('hero-card-sub').textContent = t.heroCardSub;
+            for (let i = 0; i < 5; i++) {
+                document.getElementById(`station-${i + 1}`).textContent = t.stations[i];
+            }
+
+            // Module 1: Personas
+            document.getElementById('m1-badge').textContent = t.m1Badge;
+            document.getElementById('m1-title').textContent = t.m1Title;
+            document.getElementById('m1-subtitle').textContent = t.m1Subtitle;
+            renderPersonasCards();
+            renderPersonaQuiz();
+
+            // Module 2: Body Signals
+            document.getElementById('m2-badge').textContent = t.m2Badge;
+            document.getElementById('m2-title').textContent = t.m2Title;
+            document.getElementById('m2-subtitle').textContent = t.m2Subtitle;
+            document.getElementById('body-checklist-title').textContent = t.bodyChecklistTitle;
+            document.getElementById('body-meter-label').textContent = t.bodyMeterLabel;
+            renderBodySignals();
+
+            // Module 3: Masks Flip Cards
+            document.getElementById('m3-badge').textContent = t.m3Badge;
+            document.getElementById('m3-title').textContent = t.m3Title;
+            document.getElementById('m3-subtitle').textContent = t.m3Subtitle;
+            renderMasks();
+
+            // Module 4: Dangerous Patterns
+            document.getElementById('m4-badge').textContent = t.m4Badge;
+            document.getElementById('m4-title').textContent = t.m4Title;
+            document.getElementById('m4-subtitle').textContent = t.m4Subtitle;
+            document.getElementById('comparison-title').textContent = t.comparisonTitle;
+            document.getElementById('comp-wound-title').textContent = t.compWoundTitle;
+            document.getElementById('comp-love-title').textContent = t.compLoveTitle;
+            renderPatterns();
+
+            // Module 5: Recovery Action Plan
+            document.getElementById('m5-badge').textContent = t.m5Badge;
+            document.getElementById('m5-title').textContent = t.m5Title;
+            document.getElementById('m5-subtitle').textContent = t.m5Subtitle;
+            document.getElementById('recovery-tracker-title').textContent = t.recoveryTrackerTitle;
+            document.getElementById('recovery-tracker-sub').textContent = t.recoveryTrackerSub;
+            document.getElementById('mirror-pledge-title').querySelector('span').textContent = t.mirrorPledgeTitle;
+            document.getElementById('mirror-pledge-quote').textContent = t.mirrorPledgeQuote;
+            document.getElementById('copy-quote-text').textContent = t.copyQuoteText;
+            renderRecoverySteps();
+
+            // Footer
+            document.getElementById('footer-video-ref').textContent = t.footerVideoRef;
+        }
+
+        // Render 3 Personas Cards
+        function renderPersonasCards() {
+            const t = i18n[currentLang];
+            const container = document.getElementById('personas-cards-container');
+            const colorMap = {
+                rose: {
+                    bg: "bg-rose-500/10 dark:bg-rose-500/15",
+                    border: "border-rose-500/30",
+                    text: "text-rose-600 dark:text-rose-400",
+                    badge: "bg-rose-500 text-white"
+                },
+                amber: {
+                    bg: "bg-amber-500/10 dark:bg-amber-500/15",
+                    border: "border-amber-500/30",
+                    text: "text-amber-600 dark:text-amber-400",
+                    badge: "bg-amber-500 text-white"
+                },
+                primary: {
+                    bg: "bg-primary-500/10 dark:bg-primary-500/15",
+                    border: "border-primary-500/30",
+                    text: "text-primary-600 dark:text-primary-400",
+                    badge: "bg-primary-600 text-white"
+                }
+            };
+
+            container.innerHTML = t.personas.map(p => {
+                const c = colorMap[p.color];
+                return `
+                    <div class="rounded-3xl bg-white dark:bg-slate-900 border ${c.border} p-6 shadow-md hover:shadow-xl transition flex flex-col justify-between space-y-4">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <div class="w-12 h-12 rounded-2xl ${c.bg} ${c.text} flex items-center justify-center text-xl">
+                                    <i class="fa-solid ${p.icon}"></i>
+                                </div>
+                                <span class="text-xs font-bold px-3 py-1 rounded-full ${c.bg} ${c.text}">${p.role}</span>
+                            </div>
+                            <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">${p.title}</h3>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">${p.desc}</p>
+                        </div>
+                        <div class="p-3.5 rounded-2xl ${c.bg} border ${c.border} text-xs sm:text-sm font-semibold ${c.text}">
+                            ${p.danger}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Render Interactive Persona Quiz
+        function renderPersonaQuiz() {
+            const t = i18n[currentLang];
+            document.getElementById('quiz-title').querySelector('span').textContent = t.quizTitle;
+            document.getElementById('quiz-subtitle').textContent = t.quizSubtitle;
+            document.getElementById('quiz-reset-btn').querySelector('span').textContent = t.quizResetBtn;
+            document.getElementById('quiz-result-heading').textContent = t.quizResultHeading;
+
+            const qContainer = document.getElementById('quiz-questions-container');
+            qContainer.innerHTML = t.quizQuestions.map((qObj, qIdx) => {
+                const optionsHtml = qObj.options.map((opt, oIdx) => {
+                    const isSelected = quizAnswers[qIdx] === opt.type;
+                    const activeClasses = isSelected
+                        ? "border-accent-500 bg-accent-500/10 dark:bg-accent-500/20 text-accent-700 dark:text-accent-300 font-bold"
+                        : "border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800/60 text-slate-700 dark:text-slate-300";
+                    return `
+                        <button onclick="selectQuizOption(${qIdx}, ${opt.type})" class="w-full text-start p-3 rounded-xl border ${activeClasses} text-xs sm:text-sm transition flex items-center justify-between gap-2">
+                            <span>${opt.text}</span>
+                            <i class="fa-solid ${isSelected ? 'fa-circle-check text-accent-500' : 'fa-circle text-slate-300 dark:text-slate-600'} shrink-0"></i>
+                        </button>
+                    `;
+                }).join('');
+
+                return `
+                    <div class="p-4 rounded-2xl bg-slate-50/70 dark:bg-slate-800/40 border border-slate-200/70 dark:border-slate-700/60 space-y-2.5">
+                        <h4 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white">${qObj.q}</h4>
+                        <div class="space-y-2">${optionsHtml}</div>
+                    </div>
+                `;
+            }).join('');
+
+            updatePersonaQuizMetrics();
+        }
+
+        function selectQuizOption(questionIndex, personaType) {
+            quizAnswers[questionIndex] = personaType;
+            renderPersonaQuiz();
+        }
+
+        function resetPersonaQuiz() {
+            quizAnswers = [2, 2, 2, 2]; // Set all to Conscious Adult as an inspiring reset
+            renderPersonaQuiz();
+        }
+
+        function updatePersonaQuizMetrics() {
+            const t = i18n[currentLang];
+            const counts = [0, 0, 0]; // child, parent, adult
+            quizAnswers.forEach(ans => counts[ans]++);
+            const total = quizAnswers.length;
+            const childPct = Math.round((counts[0] / total) * 100);
+            const parentPct = Math.round((counts[1] / total) * 100);
+            const adultPct = Math.round((counts[2] / total) * 100);
+
+            document.getElementById('bar-label-child').innerHTML = `<i class="fa-solid fa-child-reaching"></i> ${t.barLabels.child}`;
+            document.getElementById('bar-label-parent').innerHTML = `<i class="fa-solid fa-gavel"></i> ${t.barLabels.parent}`;
+            document.getElementById('bar-label-adult').innerHTML = `<i class="fa-solid fa-scale-balanced"></i> ${t.barLabels.adult}`;
+
+            document.getElementById('bar-val-child').textContent = `${childPct}%`;
+            document.getElementById('bar-val-parent').textContent = `${parentPct}%`;
+            document.getElementById('bar-val-adult').textContent = `${adultPct}%`;
+
+            document.getElementById('bar-fill-child').style.width = `${childPct}%`;
+            document.getElementById('bar-fill-parent').style.width = `${parentPct}%`;
+            document.getElementById('bar-fill-adult').style.width = `${adultPct}%`;
+
+            // Determine Dominant Persona
+            let dominantKey = 'adult';
+            if (counts[0] >= counts[1] && counts[0] >= counts[2]) {
+                dominantKey = 'child';
+            } else if (counts[1] >= counts[0] && counts[1] >= counts[2]) {
+                dominantKey = 'parent';
+            }
+
+            const diag = t.personaDiagnoses[dominantKey];
+            document.getElementById('persona-dominant-title').textContent = diag.title;
+            document.getElementById('persona-dominant-desc').textContent = diag.desc;
+        }
+
+        // Render Module 2: Body Signals
+        function renderBodySignals() {
+            const t = i18n[currentLang];
+            const listEl = document.getElementById('body-signals-list');
+
+            listEl.innerHTML = t.bodySignals.map((sig, idx) => {
+                const isChecked = selectedBodySignals.has(idx);
+                const cardStyle = isChecked
+                    ? "border-rose-500 bg-rose-500/10 dark:bg-rose-500/20 shadow-sm"
+                    : "border-slate-200 dark:border-slate-700 bg-slate-50/70 dark:bg-slate-800/40 hover:border-slate-300";
+
+                return `
+                    <button onclick="toggleBodySignal(${idx})" class="text-start p-4 rounded-2xl border ${cardStyle} transition flex items-start gap-3.5 group">
+                        <div class="mt-0.5 w-6 h-6 rounded-lg flex items-center justify-center shrink-0 ${isChecked ? 'bg-rose-500 text-white' : 'bg-slate-200 dark:bg-slate-700 text-transparent'} transition">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <div class="space-y-1">
+                            <h4 class="font-bold text-sm sm:text-base ${isChecked ? 'text-rose-700 dark:text-rose-300' : 'text-slate-800 dark:text-slate-100'}">${sig.title}</h4>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">${sig.desc}</p>
+                        </div>
+                    </button>
+                `;
+            }).join('');
+
+            updateBodyAlertGauge();
+        }
+
+        function toggleBodySignal(idx) {
+            if (selectedBodySignals.has(idx)) {
+                selectedBodySignals.delete(idx);
+            } else {
+                selectedBodySignals.add(idx);
+            }
+            renderBodySignals();
+        }
+
+        function updateBodyAlertGauge() {
+            const t = i18n[currentLang];
+            const count = selectedBodySignals.size;
+            const total = t.bodySignals.length;
+            const pct = Math.round((count / total) * 100);
+
+            document.getElementById('body-checked-counter').textContent = `${count} / ${total}`;
+            const pctEl = document.getElementById('body-alert-percent');
+            const barEl = document.getElementById('body-alert-bar');
+            const statusEl = document.getElementById('body-alert-status');
+            const descEl = document.getElementById('body-alert-desc');
+
+            pctEl.textContent = `${pct}%`;
+            barEl.style.width = `${pct}%`;
+
+            // Find level
+            let level = t.bodyAlertLevels[0];
+            if (count >= 4) level = t.bodyAlertLevels[2];
+            else if (count >= 2) level = t.bodyAlertLevels[1];
+
+            statusEl.textContent = level.status;
+            descEl.textContent = level.desc;
+
+            // Color styling
+            pctEl.className = "text-xl font-black";
+            barEl.className = "h-full rounded-full transition-all duration-500";
+            statusEl.className = "text-lg font-extrabold";
+
+            if (level.color === 'emerald') {
+                pctEl.classList.add('text-emerald-500');
+                barEl.classList.add('bg-emerald-500');
+                statusEl.classList.add('text-emerald-600', 'dark:text-emerald-400');
+            } else if (level.color === 'amber') {
+                pctEl.classList.add('text-amber-500');
+                barEl.classList.add('bg-amber-500');
+                statusEl.classList.add('text-amber-600', 'dark:text-amber-400');
+            } else {
+                pctEl.classList.add('text-rose-500');
+                barEl.classList.add('bg-rose-500');
+                statusEl.classList.add('text-rose-600', 'dark:text-rose-400');
+            }
+
+            // Update SVG Somatic Hotspots
+            const activeZones = new Set();
+            selectedBodySignals.forEach(idx => activeZones.add(t.bodySignals[idx].zone));
+
+            ['head', 'chest', 'gut'].forEach(zone => {
+                const circle = document.getElementById(`hotspot-${zone}`);
+                if (activeZones.has(zone)) {
+                    circle.setAttribute('class', 'fill-rose-500 pulse-glow transition-all duration-500');
+                } else {
+                    circle.setAttribute('class', 'fill-primary-500/30 transition-all duration-500');
+                }
+            });
+        }
+
+        // Render Module 3: 3D Flip Cards for Psychological Masks
+        function renderMasks() {
+            const t = i18n[currentLang];
+            const grid = document.getElementById('masks-grid');
+
+            grid.innerHTML = t.masks.map((m, idx) => `
+                <div onclick="this.classList.toggle('flipped')" class="perspective-1000 h-80 cursor-pointer group select-none" role="button" tabindex="0" aria-label="${m.outerTitle}">
+                    <div class="relative w-full h-full transform-style-3d rounded-3xl shadow-md group-hover:shadow-xl">
+                        <!-- Front Side: The Outer Mask -->
+                        <div class="absolute inset-0 backface-hidden rounded-3xl bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-800 p-6 flex flex-col justify-between">
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-500/15 text-amber-600 dark:text-amber-400">
+                                        ${t.masksOuterLabel}
+                                    </span>
+                                    <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-lg">
+                                        <i class="fa-solid ${m.icon}"></i>
+                                    </div>
+                                </div>
+                                <h3 class="text-lg font-extrabold text-slate-900 dark:text-white">${m.outerTitle}</h3>
+                                <p class="text-sm italic text-slate-600 dark:text-slate-300 bg-slate-50 dark:bg-slate-800/70 p-3.5 rounded-2xl border border-slate-200/60 dark:border-slate-700/60">
+                                    ${m.outerDesc}
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-center gap-2 text-xs font-bold text-accent-600 dark:text-accent-400 pt-2 border-t border-slate-100 dark:border-slate-800">
+                                <i class="fa-solid fa-rotate"></i>
+                                <span>${t.masksFlipHint}</span>
+                            </div>
+                        </div>
+
+                        <!-- Back Side: The Hidden Inner Reality -->
+                        <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-3xl bg-gradient-to-br from-accent-900 via-slate-900 to-slate-950 text-white border-2 border-accent-500/50 p-6 flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <span class="inline-block px-3 py-1 rounded-full text-xs font-bold bg-rose-500/25 text-rose-300 border border-rose-500/30">
+                                    ${t.masksInnerLabel}
+                                </span>
+                                <h3 class="text-base sm:text-lg font-extrabold text-accent-300">${m.innerTitle}</h3>
+                                <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">${m.innerDesc}</p>
+                                <div class="p-3 rounded-xl bg-white/10 border border-white/10 text-xs text-amber-200">
+                                    <strong class="block text-white mb-0.5">${t.masksImpactLabel}</strong>
+                                    ${m.impact}
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-center gap-2 text-xs font-bold text-slate-300 pt-1">
+                                <i class="fa-solid fa-rotate-left"></i>
+                                <span>${t.masksBackHint}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render Module 4: Dangerous Relationship Patterns
+        function renderPatterns() {
+            const t = i18n[currentLang];
+            const nav = document.getElementById('pattern-tabs-nav');
+            const detail = document.getElementById('pattern-detail-view');
+
+            nav.innerHTML = t.patterns.map((p, idx) => {
+                const isActive = idx === activePatternIndex;
+                const btnStyle = isActive
+                    ? "bg-gradient-to-r from-accent-600 to-primary-600 text-white shadow-md shadow-accent-500/20 border-transparent"
+                    : "bg-slate-50 dark:bg-slate-800/70 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700";
+
+                return `
+                    <button onclick="selectPatternTab(${idx})" class="p-4 rounded-2xl border font-bold text-sm transition flex items-center gap-3 ${btnStyle}">
+                        <i class="fa-solid ${p.icon} text-lg"></i>
+                        <span class="truncate">${p.tabTitle}</span>
+                    </button>
+                `;
+            }).join('');
+
+            const activeP = t.patterns[activePatternIndex];
+            detail.innerHTML = `
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3 border-b border-slate-200 dark:border-slate-700 pb-4">
+                        <div class="w-12 h-12 rounded-2xl bg-accent-500/15 text-accent-600 dark:text-accent-400 flex items-center justify-center text-2xl shrink-0">
+                            <i class="fa-solid ${activeP.icon}"></i>
+                        </div>
+                        <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white">${activeP.fullTitle}</h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 space-y-2">
+                            <div class="text-xs font-extrabold uppercase text-rose-600 dark:text-rose-400 flex items-center gap-1.5">
+                                <i class="fa-solid fa-gears"></i>
+                                <span>${t.patternLabels.mechanism}</span>
+                            </div>
+                            <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">${activeP.mechanism}</p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700 space-y-2">
+                            <div class="text-xs font-extrabold uppercase text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
+                                <i class="fa-solid fa-eye"></i>
+                                <span>${t.patternLabels.example}</span>
+                            </div>
+                            <p class="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">${activeP.example}</p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-emerald-500/5 dark:bg-emerald-950/30 border border-emerald-500/30 space-y-2">
+                            <div class="text-xs font-extrabold uppercase text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
+                                <i class="fa-solid fa-key"></i>
+                                <span>${t.patternLabels.solution}</span>
+                            </div>
+                            <p class="text-sm text-slate-700 dark:text-slate-200 font-medium leading-relaxed">${activeP.solution}</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Render Comparison Lists
+            document.getElementById('comp-wound-list').innerHTML = t.compWoundList.map(item => `
+                <li class="flex items-start gap-2.5">
+                    <i class="fa-solid fa-xmark text-rose-500 mt-1 shrink-0"></i>
+                    <span>${item}</span>
+                </li>
+            `).join('');
+
+            document.getElementById('comp-love-list').innerHTML = t.compLoveList.map(item => `
+                <li class="flex items-start gap-2.5">
+                    <i class="fa-solid fa-check text-emerald-500 mt-1 shrink-0"></i>
+                    <span>${item}</span>
+                </li>
+            `).join('');
+        }
+
+        function selectPatternTab(idx) {
+            activePatternIndex = idx;
+            renderPatterns();
+        }
+
+        // Render Module 5: Recovery Action Plan
+        function renderRecoverySteps() {
+            const t = i18n[currentLang];
+            const grid = document.getElementById('recovery-steps-grid');
+
+            grid.innerHTML = t.recoverySteps.map((s, idx) => {
+                const isDone = completedRecoverySteps.has(idx);
+                const cardClasses = isDone
+                    ? "border-emerald-500 bg-emerald-500/5 dark:bg-emerald-950/25"
+                    : "border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-800/40 hover:border-accent-400";
+
+                return `
+                    <div onclick="toggleRecoveryStep(${idx})" class="cursor-pointer p-6 rounded-2xl border-2 ${cardClasses} transition flex flex-col justify-between space-y-4">
+                        <div class="space-y-2.5">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-extrabold px-3 py-1 rounded-full ${isDone ? 'bg-emerald-500 text-white' : 'bg-accent-500/15 text-accent-600 dark:text-accent-400'}">
+                                    ${s.stepNum}
+                                </span>
+                                <div class="w-7 h-7 rounded-full flex items-center justify-center ${isDone ? 'bg-emerald-500 text-white' : 'bg-slate-200 dark:bg-slate-700 text-slate-400'}">
+                                    <i class="fa-solid fa-check text-xs"></i>
+                                </div>
+                            </div>
+                            <h4 class="text-lg font-extrabold text-slate-900 dark:text-white">${s.title}</h4>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">${s.desc}</p>
+                        </div>
+                        <div class="pt-2 flex items-center gap-2 text-xs font-bold ${isDone ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-400'}">
+                            <i class="fa-regular ${isDone ? 'fa-square-check' : 'fa-square'} text-sm"></i>
+                            <span>${s.actionText}</span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            const pct = Math.round((completedRecoverySteps.size / t.recoverySteps.length) * 100);
+            document.getElementById('recovery-progress-bar').style.width = `${pct}%`;
+            document.getElementById('recovery-progress-text').textContent = `${pct}%`;
+        }
+
+        function toggleRecoveryStep(idx) {
+            if (completedRecoverySteps.has(idx)) {
+                completedRecoverySteps.delete(idx);
+            } else {
+                completedRecoverySteps.add(idx);
+            }
+            renderRecoverySteps();
+        }
+
+        // Language & Theme Toggles
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            renderAll();
+        }
+
+        function toggleTheme() {
+            const htmlEl = document.documentElement;
+            const iconEl = document.getElementById('theme-icon');
+            if (htmlEl.classList.contains('dark')) {
+                htmlEl.classList.remove('dark');
+                iconEl.className = 'fa-solid fa-moon text-lg text-slate-700';
+            } else {
+                htmlEl.classList.add('dark');
+                iconEl.className = 'fa-solid fa-sun text-lg text-amber-400';
+            }
+        }
+
+        // Copy Wisdom Quote to Clipboard
+        function copyWisdomQuote() {
+            const t = i18n[currentLang];
+            const quoteText = `${t.heroQuote} — ${t.mirrorPledgeQuote}`;
+            const tempInput = document.createElement('textarea');
+            tempInput.value = quoteText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            showToast(t.toastCopied);
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast-msg');
+            document.getElementById('toast-text').textContent = message;
+            toast.classList.remove('opacity-0', 'pointer-events-none');
+            toast.classList.add('opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('opacity-100');
+                toast.classList.add('opacity-0', 'pointer-events-none');
+            }, 2600);
+        }
+
+        // Initialize on Window Load
+        window.onload = function () {
+            renderAll();
+        };
+    </script>
+</body>
+</html>
